@@ -247,7 +247,7 @@ a {
 
 /* --- HEADER --- */
 .app-header {
-  height: var(--header-height);
+  height: 72px; /* Increased height matching mockup spacing */
   border-bottom: 1px solid var(--border-color);
   background-color: var(--bg-card);
   display: grid;
@@ -276,7 +276,7 @@ a {
 
 .search-box {
   position: relative;
-  width: 460px; /* Expanded width to match mockup */
+  width: 520px; /* Increased search bar width matching mockup scale */
   display: flex;
   align-items: center;
 }
@@ -292,12 +292,12 @@ a {
 
 #search-input {
   width: 100%;
-  height: 42px; /* Set definite height to match mockup */
-  padding: 0 80px 0 42px; /* Left padding matches icon inset */
-  border-radius: 10px; /* Soft, structured border-radius */
+  height: 42px; /* Set height matching mockup */
+  padding: 0 85px 0 42px; /* Left padding matches icon inset, right fits badge */
+  border-radius: 10px; /* Match border radius exactly */
   border: 1px solid var(--border-color);
   background-color: var(--bg-primary);
-  font-size: 0.88rem;
+  font-size: 0.85rem; /* Matched typography scale */
   font-weight: 500;
   transition: all var(--transition-fast);
 }
@@ -326,10 +326,10 @@ a {
 .shortcut-key kbd {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  padding: 2px 6px;
-  font-size: 0.68rem;
-  font-weight: 600;
+  border-radius: 5px; /* Match keyboard shortcut badge border radius */
+  padding: 3px 6px; /* Matched padding spacing */
+  font-size: 0.7rem; /* Matched shortcut badge font scale */
+  font-weight: 700;
   font-family: inherit;
   color: var(--text-tertiary);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
@@ -339,7 +339,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 16px; /* Spacing between Submit and Profile */
+  gap: 20px; /* Match profile button spacing */
 }
 
 /* Submit Button */
@@ -348,9 +348,9 @@ a {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 42px; /* Matching search bar height */
+  height: 42px; /* Matching search bar height precisely */
   padding: 0 20px;
-  border-radius: 10px; /* Matching search bar border-radius */
+  border-radius: 10px; /* Matching search bar border-radius precisely */
   background-color: var(--accent-orange);
   color: var(--text-light);
   font-weight: 700;
