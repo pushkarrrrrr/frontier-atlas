@@ -523,15 +523,16 @@ a {
 /* Card 1: Breakthrough Today */
 .breakthrough-card {
   grid-column: span 1;
-  background: linear-gradient(135deg, #1C1A18 0%, #11100F 100%);
+  background: radial-gradient(circle at 82% 50%, rgba(250, 70, 22, 0.14) 0%, rgba(43, 23, 10, 0.08) 45%, rgba(29, 27, 25, 0) 80%), #1B1917; /* High-fidelity brown/orange radial gradient */
   border: none;
   color: var(--text-light);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Exact premium card shadow */
 }
 
 .card-header-row {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .badge {
@@ -556,6 +557,13 @@ a {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.breakthrough-card .badge-outline {
+  border: 1.5px solid var(--accent-orange); /* Matching orange border */
+  color: var(--accent-orange); /* Matching orange text */
+  background-color: transparent;
+  font-weight: 800;
+}
+
 .badge-icon {
   width: 12px;
   height: 12px;
@@ -564,8 +572,9 @@ a {
 
 .breakthrough-content {
   display: flex;
-  gap: 20px;
+  gap: 28px;
   flex: 1;
+  align-items: flex-start;
 }
 
 .breakthrough-text {
@@ -576,30 +585,31 @@ a {
 
 .breakthrough-text h3 {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 2.25rem; /* Increased headline size matching mockup */
   font-weight: 800;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
+  line-height: 1.15; /* Clean typography line height */
+  letter-spacing: -0.03em;
+  margin-bottom: 12px; /* Precision paragraph spacing */
 }
 
 .breakthrough-text .description {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 20px;
+  margin-bottom: 24px; /* Precision spacing before bullets */
 }
 
 .bullet-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 12px; /* Matched bullet vertical spacing */
+  margin-bottom: 28px;
 }
 
 .bullet-list li {
-  font-size: 0.82rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 600; /* Legible typography weight */
   display: flex;
   align-items: center;
   gap: 8px;
@@ -614,7 +624,7 @@ a {
 }
 
 .arrow-link {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.88rem;
   color: var(--accent-orange);
   display: inline-flex;
@@ -632,20 +642,29 @@ a {
 .arrow-icon {
   width: 16px;
   height: 16px;
+  stroke-width: 2.5px;
 }
 
 .breakthrough-graphic {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.85;
+  flex-shrink: 0;
+  padding-right: 12px; /* Position graphic exactly on the right */
 }
 
 .openai-logo-mock {
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(250, 70, 22, 0.25);
+  border-radius: 22px; /* Match design border radius for app icon */
+  overflow: hidden;
+  transition: transform var(--transition-normal);
+}
+
+.openai-logo-mock:hover {
+  transform: scale(1.05);
 }
 
 /* Card 2: Rising Fast */
