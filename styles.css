@@ -1658,6 +1658,19 @@ a {
     --sidebar-width: 240px;
   }
   
+  .app-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  
+  .main-container {
+    grid-column: 1;
+  }
+  
+  .app-footer {
+    grid-column: 1;
+  }
+  
   /* Mobile Sidebar Overlays */
   .sidebar {
     position: fixed;
@@ -1666,6 +1679,8 @@ a {
     bottom: 0;
     transform: translateX(-100%);
     box-shadow: var(--shadow-lg);
+    grid-column: unset;
+    grid-row: unset;
   }
   
   .sidebar.open {
