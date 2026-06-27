@@ -964,10 +964,10 @@ a {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
-  padding: 32px; /* Increased overall card padding */
+  padding: 36px 32px; /* Increased vertical padding to 36px */
   box-shadow: var(--shadow-sm);
   display: flex;
-  gap: 32px; /* Increased gap spacing between elements */
+  gap: 36px; /* Increased gap spacing between thumbnail and content */
   position: relative; /* Position relative for absolute bookmark placement */
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -983,13 +983,13 @@ a {
 }
 
 .mock-pdf {
-  width: 155px; /* Increased paper thumbnail size to match proportions */
-  height: 205px;
+  width: 170px; /* Increased paper thumbnail size by ~10% and matched aspect ratio */
+  height: 240px;
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: 6px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-  padding: 16px; /* Increased inner padding */
+  padding: 18px; /* Scaled inner padding */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1002,8 +1002,8 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  width: 22px; /* Scaled fold vector */
-  height: 22px;
+  width: 24px; /* Scaled fold vector */
+  height: 24px;
   background: linear-gradient(135deg, transparent 50%, var(--border-color) 50%, var(--bg-card) 100%);
   border-bottom-left-radius: 4px;
   box-shadow: -1px 1px 2px rgba(0,0,0,0.03);
@@ -1011,7 +1011,7 @@ a {
 
 .pdf-header {
   font-family: var(--font-display);
-  font-size: 0.7rem; /* Scaled heading size */
+  font-size: 0.75rem; /* Scaled heading size */
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.25;
@@ -1019,14 +1019,14 @@ a {
 }
 
 .pdf-abstract-block {
-  margin-top: 12px;
+  margin-top: 14px;
   display: flex;
   flex-direction: column;
-  gap: 4.5px;
+  gap: 5px;
 }
 
 .pdf-line {
-  height: 3px; /* Slightly thicker preview lines */
+  height: 3.5px; /* Slightly thicker preview lines */
   background-color: var(--border-color);
   border-radius: 1px;
 }
@@ -1036,15 +1036,15 @@ a {
 .pdf-line.short { width: 45%; }
 
 .pdf-chart-block {
-  height: 40px; /* Scaled canvas height */
+  height: 45px; /* Scaled canvas height */
   display: flex;
   align-items: flex-end;
-  gap: 4px;
-  margin-top: 12px;
+  gap: 5px;
+  margin-top: 14px;
 }
 
 .pdf-bar {
-  width: 9px; /* Scaled bar width */
+  width: 10px; /* Scaled bar width */
   background-color: var(--accent-orange);
   opacity: 0.25;
   border-radius: 1px;
@@ -1057,13 +1057,13 @@ a {
 .pdf-flow-block {
   display: flex;
   align-items: center;
-  gap: 4px;
-  margin-top: 12px;
+  gap: 5px;
+  margin-top: 14px;
 }
 
 .flow-step {
-  width: 20px; /* Scaled diagram steps */
-  height: 20px;
+  width: 22px; /* Scaled diagram steps */
+  height: 22px;
   border: 1px solid var(--border-color);
   background-color: var(--bg-card);
   border-radius: 4px;
@@ -1078,18 +1078,18 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 6px;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .pdf-grid-decor div {
-  height: 18px;
+  height: 20px;
   background-color: var(--border-color);
   border-radius: 2px;
 }
 
 .pdf-bottom-decor {
   font-family: var(--font-display);
-  font-size: 0.58rem;
+  font-size: 0.62rem;
   font-weight: 700;
   color: var(--text-tertiary);
   text-align: right;
@@ -1109,7 +1109,7 @@ a {
   letter-spacing: -0.02em;
   line-height: 1.3;
   color: var(--text-primary);
-  margin-bottom: 10px; /* Increased title spacing */
+  margin-bottom: 12px; /* Increased title spacing to 12px */
   transition: color var(--transition-fast);
 }
 
@@ -1124,7 +1124,7 @@ a {
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-tertiary);
-  margin-bottom: 16px; /* Increased metadata spacing */
+  margin-bottom: 20px; /* Increased metadata spacing to 20px */
 }
 
 .paper-meta .author {
@@ -1139,7 +1139,7 @@ a {
   font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.6; /* Matched snippet line-height */
-  margin-bottom: 24px; /* Increased description spacing */
+  margin-bottom: 28px; /* Increased description spacing to 28px */
   /* Truncation set to 4 lines matching mockup */
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -1151,8 +1151,8 @@ a {
 .paper-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 14px; /* Increased tag spacing */
+  gap: 10px; /* Increased spacing between tag pills */
+  margin-bottom: 16px; /* Increased tag margin spacing */
 }
 
 .tag {
@@ -1190,9 +1190,9 @@ a {
   flex-direction: column;
   justify-content: center; /* Center-align metrics vertically */
   align-items: center;
-  width: 115px; /* Increased metrics column width */
+  width: 120px; /* Increased metrics column width to 120px */
   border-left: 1px solid var(--border-color); /* Added vertical divider separator */
-  padding-left: 28px;
+  padding-left: 32px; /* Set spacing to match divider spacing */
   flex-shrink: 0;
 }
 
@@ -1249,8 +1249,8 @@ a {
 
 .bookmark-btn {
   position: absolute; /* Place bookmark button absolutely in top-right corner */
-  top: 32px; /* Aligned with the increased card padding of 32px */
-  right: 32px;
+  top: 36px; /* Aligned with the increased vertical card padding of 36px */
+  right: 32px; /* Aligned with the card padding of 32px */
   padding: 8px;
   border-radius: 50%;
   color: var(--text-tertiary);
