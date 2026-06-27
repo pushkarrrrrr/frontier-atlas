@@ -1279,22 +1279,23 @@ a {
 
 .social-widget {
   border-radius: var(--border-radius-lg);
-  padding: 24px;
+  padding: 28px; /* Increased padding matching statistics cards */
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 }
 
 .widget-header {
-  margin-bottom: 16px;
+  margin-bottom: 20px; /* Matched spacing under widget titles */
 }
 
 .widget-title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 0.82rem;
-  letter-spacing: 0.05em;
+  font-size: 0.72rem; /* Small & elegant uppercase text */
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -1305,8 +1306,8 @@ a {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 16px; /* Expanded vertical gaps between list items */
+  margin-bottom: 24px;
 }
 
 .social-list li {
@@ -1339,11 +1340,11 @@ a {
 
 .widget-footer-link {
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 800; /* Styled bold footer links */
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: auto;
+  margin-top: auto; /* Push link to bottom of container */
   transition: opacity var(--transition-fast);
 }
 
@@ -1353,9 +1354,9 @@ a {
 
 /* X Widget Specific */
 .x-widget {
-  background-color: #0F1419;
+  background: linear-gradient(135deg, #1A1D21 0%, #111215 100%); /* Premium dark slate gradient */
   color: var(--text-light);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Soft border for dark card contrast */
 }
 
 .x-widget .widget-title {
@@ -1385,9 +1386,9 @@ a {
 
 /* Reddit Widget Specific */
 .reddit-widget {
-  background: linear-gradient(135deg, #FF4500 0%, #1A0D00 100%);
+  background: linear-gradient(135deg, #2B150F 0%, #170E0B 50%, #0E0907 100%); /* Sophisticated dark rust gradient */
   color: var(--text-light);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Soft border for dark card contrast */
 }
 
 .reddit-widget .widget-title {
