@@ -121,11 +121,11 @@ a {
 }
 
 .sidebar-brand {
-  height: var(--header-height);
+  height: 72px; /* Set to exactly 72px matching header height */
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 0 24px;
+  padding: 0 24px; /* Matches 24px horizontal padding */
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -161,8 +161,8 @@ a {
 
 .nav-section {
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 28px;
-  margin-bottom: 28px;
+  padding-bottom: 24px; /* Balanced divider spacing */
+  margin-bottom: 24px;
 }
 
 .nav-section:last-child {
@@ -180,14 +180,14 @@ a {
   letter-spacing: 0.08em;
   color: var(--text-tertiary);
   padding: 0 24px; /* Matches 24px horizontal padding */
-  margin-bottom: 16px; /* Increased vertical space below section headers */
+  margin-bottom: 20px; /* Increased heading spacing */
 }
 
 .nav-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px; /* Increased vertical space between navigation items */
+  gap: 8px; /* Increased vertical space between navigation items */
 }
 
 .nav-item {
@@ -197,7 +197,7 @@ a {
   margin: 0 12px; /* Margin-left/right: 12px + Padding-left/right: 12px = 24px inner alignment */
   padding: 10px 12px; /* Spacing inside item, height matches design */
   border-radius: 8px; /* Smooth rounded shape */
-  font-size: 0.88rem;
+  font-size: 0.85rem; /* Matched typography scale */
   font-weight: 600; /* Matching font-weight of design */
   line-height: 1.2;
   color: var(--text-secondary);
