@@ -245,21 +245,18 @@ a {
   height: var(--header-height);
   border-bottom: 1px solid var(--border-color);
   background-color: var(--bg-card);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Centers the search bar perfectly */
   align-items: center;
-  justify-content: space-between;
   padding: 0 32px;
   position: sticky;
   top: 0;
   z-index: 90;
 }
 
-.header-left {
+.header-left-slot {
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex: 1;
-  max-width: 600px;
 }
 
 .mobile-toggle-btn {
@@ -274,14 +271,14 @@ a {
 
 .search-box {
   position: relative;
-  width: 100%;
+  width: 460px; /* Expanded width to match mockup */
   display: flex;
   align-items: center;
 }
 
 .search-icon {
   position: absolute;
-  left: 12px;
+  left: 14px;
   width: 18px;
   height: 18px;
   color: var(--text-tertiary);
@@ -290,20 +287,27 @@ a {
 
 #search-input {
   width: 100%;
-  padding: 10px 80px 10px 40px;
-  border-radius: 10px;
+  height: 42px; /* Set definite height to match mockup */
+  padding: 0 80px 0 42px; /* Left padding matches icon inset */
+  border-radius: 10px; /* Soft, structured border-radius */
   border: 1px solid var(--border-color);
   background-color: var(--bg-primary);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   transition: all var(--transition-fast);
+}
+
+#search-input::placeholder {
+  color: var(--text-tertiary);
+  font-weight: 500;
+  opacity: 0.85;
 }
 
 #search-input:focus {
   outline: none;
   background-color: var(--bg-card);
   border-color: #E2DDD5;
-  box-shadow: 0 0 0 3px rgba(250, 70, 22, 0.08);
+  box-shadow: 0 0 0 3px rgba(250, 70, 22, 0.06);
 }
 
 .shortcut-key {
@@ -318,39 +322,42 @@ a {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  padding: 2px 5px;
-  font-size: 0.65rem;
+  padding: 2px 6px;
+  font-size: 0.68rem;
   font-weight: 600;
   font-family: inherit;
   color: var(--text-tertiary);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: flex-end;
+  gap: 16px; /* Spacing between Submit and Profile */
 }
 
 /* Submit Button */
 .submit-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  height: 42px; /* Matching search bar height */
+  padding: 0 20px;
+  border-radius: 10px; /* Matching search bar border-radius */
   background-color: var(--accent-orange);
   color: var(--text-light);
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 10px 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(250, 70, 22, 0.25);
+  font-weight: 700;
+  font-size: 0.88rem;
+  box-shadow: 0 2px 6px rgba(250, 70, 22, 0.15);
   transition: all var(--transition-fast);
 }
 
 .submit-btn:hover {
   background-color: var(--accent-orange-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(250, 70, 22, 0.35);
+  box-shadow: 0 4px 10px rgba(250, 70, 22, 0.25);
 }
 
 .submit-btn:active {
@@ -358,9 +365,9 @@ a {
 }
 
 .btn-icon {
-  width: 16px;
-  height: 16px;
-  stroke-width: 2.5px;
+  width: 15px; /* Clean icon sizing */
+  height: 15px;
+  stroke-width: 2.2px;
 }
 
 /* Profile Dropdown Menu */
