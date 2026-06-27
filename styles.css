@@ -1288,16 +1288,17 @@ a {
 
 .social-widget {
   border-radius: var(--border-radius-lg);
-  padding: 28px; /* Increased padding matching statistics cards */
+  padding: 32px; /* Increased padding matching other layout cards */
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
+  min-height: 280px; /* Matched card height proportions */
 }
 
 .widget-header {
-  margin-bottom: 20px; /* Matched spacing under widget titles */
+  margin-bottom: 24px; /* Increased margin for spacing between rows */
 }
 
 .widget-title {
@@ -1309,6 +1310,12 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.widget-title svg, .widget-title i {
+  width: 16px; /* Matched icon sizes */
+  height: 16px;
+  flex-shrink: 0;
 }
 
 .social-list {
