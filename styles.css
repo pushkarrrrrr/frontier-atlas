@@ -30,7 +30,7 @@
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Layout */
-  --sidebar-width: 250px;
+  --sidebar-width: 265px;
   --header-height: 70px;
   --max-width: 1440px;
   --border-radius: 12px;
@@ -133,7 +133,7 @@ a {
   height: 32px;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(250, 70, 22, 0.25);
+  box-shadow: 0 2px 8px rgba(250, 70, 22, 0.15);
   transition: transform var(--transition-fast);
 }
 
@@ -152,69 +152,75 @@ a {
 .sidebar-nav {
   flex: 1;
   overflow-y: auto;
-  padding: 24px 16px;
+  padding: 32px 0 24px 0; /* No horizontal padding on wrapper to align items using margins */
 }
 
 .nav-section {
-  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
 }
 
 .nav-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
   margin-bottom: 0;
 }
 
 .section-title {
   display: block;
   font-family: var(--font-display);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.68rem; /* Small & elegant uppercase text */
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-tertiary);
-  margin-left: 12px;
-  margin-bottom: 10px;
+  padding: 0 24px; /* Matches 24px horizontal padding */
+  margin-bottom: 16px; /* Increased vertical space below section headers */
 }
 
 .nav-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px; /* Increased vertical space between navigation items */
 }
 
 .nav-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 8px 12px;
-  border-radius: var(--border-radius-sm);
+  margin: 0 12px; /* Margin-left/right: 12px + Padding-left/right: 12px = 24px inner alignment */
+  padding: 10px 12px; /* Spacing inside item, height matches design */
+  border-radius: 8px; /* Smooth rounded shape */
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: 600; /* Matching font-weight of design */
+  line-height: 1.2;
   color: var(--text-secondary);
   transition: all var(--transition-fast);
 }
 
 .nav-item:hover {
-  background-color: rgba(0, 0, 0, 0.025);
+  background-color: rgba(26, 24, 22, 0.04); /* Matching hover background tint */
   color: var(--text-primary);
 }
 
 .nav-item.active {
-  background-color: var(--accent-orange-bg);
+  background-color: rgba(250, 70, 22, 0.07); /* Matching active pill background tint */
   color: var(--accent-orange-text);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .nav-icon {
-  width: 16px;
-  height: 16px;
-  stroke-width: 2px;
+  width: 18px; /* Crisp icon sizing */
+  height: 18px;
+  stroke-width: 1.8px; /* Crisp line weight matching design */
 }
 
 .count-badge {
   margin-left: auto;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   background-color: var(--border-color);
   color: var(--text-secondary);
   padding: 1px 6px;
