@@ -955,11 +955,11 @@ a {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
-  padding: 24px;
+  padding: 28px; /* Increased overall padding */
   box-shadow: var(--shadow-sm);
   display: flex;
-  gap: 24px;
-  position: relative;
+  gap: 28px; /* Increased gap spacing between elements */
+  position: relative; /* Position relative for absolute bookmark placement */
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -974,13 +974,13 @@ a {
 }
 
 .mock-pdf {
-  width: 110px;
-  height: 140px;
+  width: 140px; /* Increased thumbnail size to match image proportions */
+  height: 185px;
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: 6px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-  padding: 10px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -993,8 +993,8 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   background: linear-gradient(135deg, transparent 50%, var(--border-color) 50%, var(--bg-card) 100%);
   border-bottom-left-radius: 4px;
   box-shadow: -1px 1px 2px rgba(0,0,0,0.03);
@@ -1002,22 +1002,22 @@ a {
 
 .pdf-header {
   font-family: var(--font-display);
-  font-size: 0.55rem;
+  font-size: 0.65rem; /* Tuned heading size for enlarged canvas */
   font-weight: 800;
   color: var(--text-primary);
-  line-height: 1.2;
+  line-height: 1.25;
   margin-top: 4px;
 }
 
 .pdf-abstract-block {
-  margin-top: 8px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .pdf-line {
-  height: 2px;
+  height: 2.5px;
   background-color: var(--border-color);
   border-radius: 1px;
 }
@@ -1027,15 +1027,15 @@ a {
 .pdf-line.short { width: 45%; }
 
 .pdf-chart-block {
-  height: 25px;
+  height: 35px; /* Enlarged canvas height */
   display: flex;
   align-items: flex-end;
-  gap: 3px;
-  margin-top: 8px;
+  gap: 4px;
+  margin-top: 10px;
 }
 
 .pdf-bar {
-  width: 6px;
+  width: 8px; /* Slightly wider bars */
   background-color: var(--accent-orange);
   opacity: 0.25;
   border-radius: 1px;
@@ -1048,40 +1048,40 @@ a {
 .pdf-flow-block {
   display: flex;
   align-items: center;
-  gap: 3px;
-  margin-top: 8px;
+  gap: 4px;
+  margin-top: 10px;
 }
 
 .flow-step {
-  width: 14px;
-  height: 14px;
+  width: 18px; /* Taller diagram elements */
+  height: 18px;
   border: 1px solid var(--border-color);
   background-color: var(--bg-card);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .flow-arrow {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   color: var(--text-tertiary);
 }
 
 .pdf-grid-decor {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4px;
-  margin-top: 8px;
+  gap: 6px;
+  margin-top: 10px;
 }
 
 .pdf-grid-decor div {
-  height: 12px;
+  height: 16px;
   background-color: var(--border-color);
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 .pdf-bottom-decor {
   font-family: var(--font-display);
-  font-size: 0.45rem;
-  font-weight: 600;
+  font-size: 0.52rem;
+  font-weight: 700;
   color: var(--text-tertiary);
   text-align: right;
 }
@@ -1095,12 +1095,12 @@ a {
 
 .paper-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.3rem; /* Bold & prominent title size */
   font-weight: 800;
-  letter-spacing: -0.015em;
-  line-height: 1.35;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
   color: var(--text-primary);
-  margin-bottom: 6px;
+  margin-bottom: 8px; /* Proper padding under title */
   transition: color var(--transition-fast);
 }
 
@@ -1112,10 +1112,10 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-tertiary);
-  margin-bottom: 12px;
+  margin-bottom: 14px; /* Matched spacing */
 }
 
 .paper-meta .author {
@@ -1129,13 +1129,13 @@ a {
 .paper-snippet {
   font-size: 0.88rem;
   color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 18px;
-  /* Truncation style */
+  line-height: 1.55; /* Comfortable reading height */
+  margin-bottom: 20px;
+  /* Truncation set to 4 lines matching mockup */
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  line-clamp: 3;
+  line-clamp: 4;
   overflow: clip;
 }
 
@@ -1143,13 +1143,13 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .tag {
   font-size: 0.72rem;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 4px 10px; /* Precise tag padding */
   border-radius: 6px;
 }
 
@@ -1167,10 +1167,11 @@ a {
 .tech-tag {
   font-family: var(--font-sans);
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-secondary);
-  background-color: #F3ECE6;
-  padding: 3px 8px;
+  background-color: #FAF8F6; /* Matched tech stack tag theme */
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
   border-radius: 6px;
 }
 
@@ -1178,16 +1179,18 @@ a {
 .paper-metrics {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 90px;
+  justify-content: center; /* Center-align metrics vertically */
+  align-items: center;
+  width: 105px; /* Tuned metrics column width */
+  border-left: 1px solid var(--border-color); /* Added clean vertical separator */
+  padding-left: 24px;
   flex-shrink: 0;
 }
 
 .metric-action-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   width: 100%;
 }
 
@@ -1202,15 +1205,15 @@ a {
 }
 
 .action-metric:hover {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(26, 24, 22, 0.03);
 }
 
 .action-metric .metric-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   color: var(--text-secondary);
   stroke-width: 2.2px;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .action-metric.upvote-btn:hover {
@@ -1223,19 +1226,22 @@ a {
 
 .action-metric .count {
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-primary);
   line-height: 1.1;
 }
 
 .action-metric .label {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 600;
   color: var(--text-tertiary);
   margin-top: 2px;
 }
 
 .bookmark-btn {
+  position: absolute; /* Place bookmark button absolutely in top-right corner */
+  top: 24px;
+  right: 24px;
   padding: 8px;
   border-radius: 50%;
   color: var(--text-tertiary);
@@ -1243,11 +1249,12 @@ a {
   align-items: center;
   justify-content: center;
   transition: all var(--transition-fast);
+  z-index: 10;
 }
 
 .bookmark-btn:hover {
   color: var(--text-primary);
-  background-color: rgba(0,0,0,0.03);
+  background-color: rgba(26, 24, 22, 0.04);
 }
 
 .bookmark-btn.active {
