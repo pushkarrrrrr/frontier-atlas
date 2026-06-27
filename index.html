@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontier Atlas - AI Research & Development Hub</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover trending AI papers, SOTA benchmarks, GitHub projects, and real-time discussions from X and Reddit.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- App Container -->
+  <div class="app-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <div class="logo-wrapper">
+          <svg class="brand-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="6" fill="#FF4500"/>
+            <path d="M7 10L10 12L7 14M17 14L14 12L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 7V17" stroke="white" stroke-width="1.5" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+        <span class="brand-name">Frontier Atlas</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- Discover -->
+        <div class="nav-section">
+          <span class="section-title">Discover</span>
+          <ul class="nav-list">
+            <li class="nav-item active" data-tab="trending-papers">
+              <i data-lucide="flame" class="nav-icon"></i>
+              <span>Trending Papers</span>
+            </li>
+            <li class="nav-item" data-tab="latest-papers">
+              <i data-lucide="clock" class="nav-icon"></i>
+              <span>Latest Papers</span>
+            </li>
+            <li class="nav-item" data-tab="github-stars">
+              <i data-lucide="star" class="nav-icon"></i>
+              <span>Most GitHub Stars</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tasks -->
+        <div class="nav-section">
+          <span class="section-title">Tasks</span>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <i data-lucide="cpu" class="nav-icon"></i>
+              <span>Agents</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="brain" class="nav-icon"></i>
+              <span>Reasoning</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="message-square-code" class="nav-icon"></i>
+              <span>Language Modeling</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="terminal" class="nav-icon"></i>
+              <span>Coding Agents</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="monitor" class="nav-icon"></i>
+              <span>Computer Use</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="globe" class="nav-icon"></i>
+              <span>World Models</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="toy-brick" class="nav-icon"></i>
+              <span>Robotics</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Methods -->
+        <div class="nav-section">
+          <span class="section-title">Methods</span>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <i data-lucide="layers" class="nav-icon"></i>
+              <span>Transformer</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="git-branch" class="nav-icon"></i>
+              <span>Chain of Thought</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="shuffle" class="nav-icon"></i>
+              <span>ReAct</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="settings-2" class="nav-icon"></i>
+              <span>LoRA</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="award" class="nav-icon"></i>
+              <span>RLHF</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="sliders" class="nav-icon"></i>
+              <span>DPO</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="server-cog" class="nav-icon"></i>
+              <span>MCP</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Generation -->
+        <div class="nav-section">
+          <span class="section-title">Generation</span>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <i data-lucide="text" class="nav-icon"></i>
+              <span>Text Generation</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="image" class="nav-icon"></i>
+              <span>Image Generation</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="video" class="nav-icon"></i>
+              <span>Video Generation</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="volume-2" class="nav-icon"></i>
+              <span>Audio Generation</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Library -->
+        <div class="nav-section">
+          <span class="section-title">Library</span>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <i data-lucide="building-2" class="nav-icon"></i>
+              <span>Organizations</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="folder-heart" class="nav-icon"></i>
+              <span>Collections</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Personal -->
+        <div class="nav-section">
+          <span class="section-title">Personal</span>
+          <ul class="nav-list">
+            <li class="nav-item" id="nav-bookmarks">
+              <i data-lucide="bookmark" class="nav-icon"></i>
+              <span>Bookmarks</span>
+              <span class="count-badge" id="bookmark-count">0</span>
+            </li>
+            <li class="nav-item">
+              <i data-lucide="book-open" class="nav-icon"></i>
+              <span>Reading List</span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-container">
+      
+      <!-- Top Header Bar -->
+      <header class="app-header">
+        <div class="header-left">
+          <!-- Mobile Sidebar Toggle -->
+          <button class="mobile-toggle-btn" id="mobile-toggle" aria-label="Toggle Navigation Sidebar">
+            <i data-lucide="menu"></i>
+          </button>
+          
+          <!-- Search Bar -->
+          <div class="search-box">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" placeholder="Search papers, authors, topics..." id="search-input" aria-label="Search inputs">
+            <span class="shortcut-key"><kbd>⌘</kbd> <kbd>K</kbd></span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Submit Button -->
+          <button class="submit-btn" id="submit-paper-btn">
+            <i data-lucide="plus" class="btn-icon"></i>
+            <span>Submit</span>
+          </button>
+          
+          <!-- Profile Menu -->
+          <div class="profile-menu">
+            <button class="profile-avatar-btn" id="profile-btn" aria-label="User Profile Options">
+              <div class="avatar-circle">
+                <i data-lucide="user" class="avatar-icon"></i>
+              </div>
+              <i data-lucide="chevron-down" class="profile-chevron"></i>
+            </button>
+            <div class="dropdown-menu" id="profile-dropdown">
+              <div class="dropdown-header">
+                <strong>Gemini Developer</strong>
+                <span>developer@frontier.ai</span>
+              </div>
+              <hr>
+              <a href="#" class="dropdown-item"><i data-lucide="settings"></i> Account Settings</a>
+              <a href="#" class="dropdown-item"><i data-lucide="shield"></i> API Keys</a>
+              <a href="#" class="dropdown-item text-danger"><i data-lucide="log-out"></i> Log Out</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Wrapper -->
+      <main class="dashboard-body">
+        
+        <!-- Top Metrics Row -->
+        <div class="metrics-grid">
+          
+          <!-- Card 1: Breakthrough Today -->
+          <div class="metric-card breakthrough-card">
+            <div class="card-header-row">
+              <span class="badge badge-orange"><i data-lucide="flame" class="badge-icon"></i> Breakthrough Today</span>
+              <span class="badge badge-outline">Official Release</span>
+            </div>
+            <div class="breakthrough-content">
+              <div class="breakthrough-text">
+                <h3>OpenAI releases GPT-4.5 Turbo</h3>
+                <p class="description">First-party model in the GPT-4.5 series, now available in OpenAI Studio.</p>
+                <ul class="bullet-list">
+                  <li><i data-lucide="star" class="bullet-icon"></i> Beats Gemini 1.5 Pro on 7 benchmarks</li>
+                  <li><i data-lucide="star" class="bullet-icon"></i> 256K context length</li>
+                  <li><i data-lucide="star" class="bullet-icon"></i> Lower latency, higher accuracy</li>
+                </ul>
+                <a href="#" class="arrow-link">View paper <i data-lucide="arrow-right" class="arrow-icon"></i></a>
+              </div>
+              <div class="breakthrough-graphic">
+                <div class="openai-logo-mock">
+                  <svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="#FA4616" stroke-width="4" stroke-dasharray="6 3"/>
+                    <path d="M50 20C45 20 40 25 40 30C40 32 41 34 42 36C40 36 38 35 36 35C31 35 27 39 27 44C27 46 28 48 29 50C28 50 26 49 25 49C20 49 16 53 16 58C16 63 20 67 25 67C26 67 28 66 29 66C28 68 27 70 27 72C27 77 31 81 36 81C38 81 40 80 42 80C41 82 40 84 40 86C40 91 45 96 50 96C55 96 60 91 60 86C60 84 59 82 58 80C60 80 62 81 64 81C69 81 73 77 73 72C73 70 72 68 71 66C72 66 74 67 75 67C80 67 84 63 84 58C84 53 80 49 75 49C74 49 72 50 71 50C72 48 73 46 73 44C73 39 69 35 64 35C62 35 60 36 58 36C59 34 60 32 60 30C60 25 55 20 50 20Z" fill="url(#orange-grad)"/>
+                    <defs>
+                      <linearGradient id="orange-grad" x1="16" y1="20" x2="84" y2="96" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#FF6B35"/>
+                        <stop offset="100%" stop-color="#FF3F00"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Rising Fast -->
+          <div class="metric-card trend-card">
+            <div class="card-title-row">
+              <span class="card-icon-title"><i data-lucide="trending-up" class="title-icon text-orange"></i> Rising Fast</span>
+            </div>
+            <div class="trend-hero">
+              <span class="trend-value text-orange">+540</span>
+              <span class="trend-desc">GitHub stars in the last 8 hours</span>
+            </div>
+            <ul class="ranking-list">
+              <li>
+                <span class="rank-num">1</span>
+                <span class="rank-name font-semibold">VoxCPM-1.5</span>
+                <span class="rank-score"><span class="score-val">+540</span> <i data-lucide="star" class="star-icon"></i></span>
+              </li>
+              <li>
+                <span class="rank-num">2</span>
+                <span class="rank-name font-semibold">DeepSeek-R1.1</span>
+                <span class="rank-score"><span class="score-val">+412</span> <i data-lucide="star" class="star-icon"></i></span>
+              </li>
+              <li>
+                <span class="rank-num">3</span>
+                <span class="rank-name font-semibold">LongRPE 2.0</span>
+                <span class="rank-score"><span class="score-val">+398</span> <i data-lucide="star" class="star-icon"></i></span>
+              </li>
+            </ul>
+            <a href="#" class="card-footer-link">View all rising <i data-lucide="arrow-right" class="arrow-icon"></i></a>
+          </div>
+
+          <!-- Card 3: New SOTA Today -->
+          <div class="metric-card sota-card">
+            <div class="card-title-row">
+              <span class="card-icon-title"><i data-lucide="trophy" class="title-icon text-gold"></i> New SOTA Today</span>
+              <a href="#" class="view-all-link">View all</a>
+            </div>
+            <ul class="sota-list">
+              <li>
+                <span class="sota-badge">SOTA</span>
+                <div class="sota-details">
+                  <span class="sota-name font-semibold">s1: Simple Test-Time Scaling</span>
+                  <span class="sota-sub">#1 on 8 benchmarks</span>
+                </div>
+              </li>
+              <li>
+                <span class="sota-badge">SOTA</span>
+                <div class="sota-details">
+                  <span class="sota-name font-semibold">LongRPE 2.0</span>
+                  <span class="sota-sub">#1 on 6 benchmarks</span>
+                </div>
+              </li>
+              <li>
+                <span class="sota-badge">SOTA</span>
+                <div class="sota-details">
+                  <span class="sota-name font-semibold">V-JEPA 2</span>
+                  <span class="sota-sub">#1 on 4 benchmarks</span>
+                </div>
+              </li>
+              <li>
+                <span class="sota-badge">SOTA</span>
+                <div class="sota-details">
+                  <span class="sota-name font-semibold">MuJoCo World Model Suite</span>
+                  <span class="sota-sub">#1 on 3 benchmarks</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card 4: Trending on GitHub -->
+          <div class="metric-card github-card">
+            <div class="card-title-row">
+              <span class="card-icon-title"><i data-lucide="github" class="title-icon"></i> Trending on GitHub</span>
+            </div>
+            <ul class="github-repo-list">
+              <li>
+                <span class="repo-name"><i data-lucide="git-fork" class="repo-icon"></i> microsoft/BitNet</span>
+                <span class="star-count">+2.1k <i data-lucide="star" class="star-icon"></i></span>
+              </li>
+              <li>
+                <span class="repo-name"><i data-lucide="git-fork" class="repo-icon"></i> huggingface/transformers</span>
+                <span class="star-count">+1.8k <i data-lucide="star" class="star-icon"></i></span>
+              </li>
+              <li>
+                <span class="repo-name"><i data-lucide="git-fork" class="repo-icon"></i> databricks/dolly</span>
+                <span class="star-count">+1.6k <i data-lucide="star" class="star-icon"></i></span>
+              </li>
+              <li>
+                <span class="repo-name"><i data-lucide="git-fork" class="repo-icon"></i> vim-project/vim</span>
+                <span class="star-count">+1.4k <i data-lucide="star" class="star-icon"></i></span>
+              </li>
+              <li>
+                <span class="repo-name"><i data-lucide="git-fork" class="repo-icon"></i> unslothai/unsloth</span>
+                <span class="star-count">+1.2k <i data-lucide="star" class="star-icon"></i></span>
+              </li>
+            </ul>
+            <a href="#" class="card-footer-link">View all trending repos <i data-lucide="arrow-right" class="arrow-icon"></i></a>
+          </div>
+
+        </div>
+
+        <!-- Filters and Content Columns Layout -->
+        <div class="feed-tabs-row">
+          <ul class="feed-tabs" id="feed-time-tabs">
+            <li class="tab-item active" data-time="today">Today</li>
+            <li class="tab-item" data-time="week">This Week</li>
+            <li class="tab-item" data-time="month">This Month</li>
+            <li class="tab-item" data-time="all">All time</li>
+          </ul>
+        </div>
+
+        <!-- Primary Columns Layout: Feed + Side widgets -->
+        <div class="content-columns">
+          
+          <!-- Left Column: Feed items -->
+          <section class="feed-column" id="papers-feed">
+            
+            <!-- Paper 1 -->
+            <article class="paper-card" data-id="glm52" data-timestamp="2026-06-16" data-category="trending">
+              <div class="paper-preview">
+                <div class="mock-pdf">
+                  <div class="pdf-header">GLM-5.2 Technical Report</div>
+                  <div class="pdf-abstract-block">
+                    <div class="pdf-line long"></div>
+                    <div class="pdf-line medium"></div>
+                    <div class="pdf-line short"></div>
+                  </div>
+                  <div class="pdf-chart-block">
+                    <div class="pdf-bar h-1"></div>
+                    <div class="pdf-bar h-2"></div>
+                    <div class="pdf-bar h-3"></div>
+                  </div>
+                  <div class="pdf-bottom-decor">Z. ai Team</div>
+                </div>
+              </div>
+              <div class="paper-main-content">
+                <h4 class="paper-title">GLM-5.2: Built for Long-Horizon Tasks</h4>
+                <div class="paper-meta">
+                  <span class="author">Z. ai Team</span>
+                  <span class="meta-dot">•</span>
+                  <span class="date">Jun 16, 2026</span>
+                </div>
+                <p class="paper-snippet">
+                  GLM-5.2 is Z.ai's latest flagship open-weight model for long-horizon agentic engineering. The release extends GLM-5.1 with a solid Mixture-of-Experts, IndexShare sparse-attention efficiency, improved MTP speculative decoding, and flexible thinking-effort controls. Benchmarks report...
+                </p>
+                <div class="paper-tags">
+                  <span class="tag tag-orange">Agents</span>
+                  <span class="tag tag-orange">Coding Agents</span>
+                  <span class="tag tag-orange">Language Modeling</span>
+                  <span class="tag tag-orange">Math</span>
+                  <span class="tag tag-orange">World Knowledge</span>
+                </div>
+                <div class="paper-tech-tags">
+                  <span class="tech-tag">DeepSeek Sparse Attention</span>
+                  <span class="tech-tag">MCP</span>
+                  <span class="tech-tag">Mixture-of-Experts (MoE)</span>
+                  <span class="tech-tag">Transformer</span>
+                </div>
+              </div>
+              <div class="paper-metrics">
+                <div class="metric-action-col">
+                  <button class="action-metric upvote-btn" aria-label="Upvote paper">
+                    <i data-lucide="arrow-up" class="metric-icon"></i>
+                    <span class="count">11.2K</span>
+                    <span class="label">Upvotes</span>
+                  </button>
+                  <button class="action-metric repo-btn" onclick="window.open('https://github.com', '_blank')" aria-label="View code repository">
+                    <i data-lucide="github" class="metric-icon"></i>
+                    <span class="count">11.3K</span>
+                    <span class="label">Repo</span>
+                  </button>
+                  <div class="action-metric citation-btn">
+                    <i data-lucide="quote" class="metric-icon"></i>
+                    <span class="count">30</span>
+                    <span class="label">Citations</span>
+                  </div>
+                </div>
+                <button class="bookmark-btn" aria-label="Bookmark paper" data-target="glm52">
+                  <i data-lucide="bookmark" class="bookmark-icon"></i>
+                </button>
+              </div>
+            </article>
+
+            <!-- Paper 2 -->
+            <article class="paper-card" data-id="indexcache" data-timestamp="2026-03-12" data-category="latest">
+              <div class="paper-preview">
+                <div class="mock-pdf">
+                  <div class="pdf-header">IndexCache Architecture</div>
+                  <div class="pdf-abstract-block">
+                    <div class="pdf-line medium"></div>
+                    <div class="pdf-line long"></div>
+                    <div class="pdf-line short"></div>
+                  </div>
+                  <div class="pdf-flow-block">
+                    <div class="flow-step"></div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step"></div>
+                  </div>
+                  <div class="pdf-bottom-decor">Yushi Bai et al.</div>
+                </div>
+              </div>
+              <div class="paper-main-content">
+                <h4 class="paper-title">IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse</h4>
+                <div class="paper-meta">
+                  <span class="author">Yushi Bai, Qian Dong, Ting Jiang, +5 authors</span>
+                  <span class="meta-dot">•</span>
+                  <span class="date">Mar 12, 2026</span>
+                </div>
+                <p class="paper-snippet">
+                  Long-context agentic workflows have emerged as a defining use case for large language models, making attention efficiency critical for both inference speed and serving cost. Sparse attention addresses this challenge effectively, and DeepSeek Sparse Attention (DSA) is a representative...
+                </p>
+                <div class="paper-tags">
+                  <span class="tag tag-orange">Language Modeling</span>
+                  <span class="tag tag-orange">Long Context</span>
+                  <span class="tag tag-orange">Efficiency</span>
+                </div>
+                <div class="paper-tech-tags">
+                  <span class="tech-tag">DeepSeek Sparse Attention</span>
+                  <span class="tech-tag">Gated DeltaNet</span>
+                  <span class="tech-tag">Key-value cache</span>
+                  <span class="tech-tag">Kimi Delta Attention</span>
+                </div>
+              </div>
+              <div class="paper-metrics">
+                <div class="metric-action-col">
+                  <button class="action-metric upvote-btn" aria-label="Upvote paper">
+                    <i data-lucide="arrow-up" class="metric-icon"></i>
+                    <span class="count">8.4K</span>
+                    <span class="label">Upvotes</span>
+                  </button>
+                  <button class="action-metric repo-btn" onclick="window.open('https://github.com', '_blank')" aria-label="View code repository">
+                    <i data-lucide="github" class="metric-icon"></i>
+                    <span class="count">8.5K</span>
+                    <span class="label">Repo</span>
+                  </button>
+                  <div class="action-metric citation-btn">
+                    <i data-lucide="quote" class="metric-icon"></i>
+                    <span class="count">10</span>
+                    <span class="label">Citations</span>
+                  </div>
+                </div>
+                <button class="bookmark-btn" aria-label="Bookmark paper" data-target="indexcache">
+                  <i data-lucide="bookmark" class="bookmark-icon"></i>
+                </button>
+              </div>
+            </article>
+
+            <!-- Paper 3 -->
+            <article class="paper-card" data-id="darwin-family" data-timestamp="2026-05-14" data-category="github">
+              <div class="paper-preview">
+                <div class="mock-pdf">
+                  <div class="pdf-header">Darwin Family Merging</div>
+                  <div class="pdf-abstract-block">
+                    <div class="pdf-line long"></div>
+                    <div class="pdf-line short"></div>
+                    <div class="pdf-line medium"></div>
+                  </div>
+                  <div class="pdf-grid-decor">
+                    <div></div><div></div><div></div><div></div>
+                  </div>
+                  <div class="pdf-bottom-decor">T. Kim et al.</div>
+                </div>
+              </div>
+              <div class="paper-main-content">
+                <h4 class="paper-title">Darwin Family: MRI-Trust-Weighted Evolutionary Merging for Training-Free Scaling of Language-Model Reasoning</h4>
+                <div class="paper-meta">
+                  <span class="author">Taehong Kim, Youngsil Hong, Minseok Kim, +4 authors</span>
+                  <span class="meta-dot">•</span>
+                  <span class="date">May 14, 2026</span>
+                </div>
+                <p class="paper-snippet">
+                  We present Darwin Family, a framework for training-free evolutionary merging of large language models via gradient-free weight-space optimization. We ask whether frontier-level reasoning performance can be improved without additional training, by reorganizing latent capabilities...
+                </p>
+                <div class="paper-tags">
+                  <span class="tag tag-orange">Language Modeling</span>
+                  <span class="tag tag-orange">Reasoning</span>
+                  <span class="tag tag-orange">Model Merging</span>
+                </div>
+                <div class="paper-tech-tags">
+                  <span class="tech-tag">Mamba</span>
+                  <span class="tech-tag">Post-training</span>
+                  <span class="tech-tag">Transformer</span>
+                </div>
+              </div>
+              <div class="paper-metrics">
+                <div class="metric-action-col">
+                  <button class="action-metric upvote-btn" aria-label="Upvote paper">
+                    <i data-lucide="arrow-up" class="metric-icon"></i>
+                    <span class="count">7.1K</span>
+                    <span class="label">Upvotes</span>
+                  </button>
+                  <button class="action-metric repo-btn" onclick="window.open('https://github.com', '_blank')" aria-label="View code repository">
+                    <i data-lucide="github" class="metric-icon"></i>
+                    <span class="count">7.2K</span>
+                    <span class="label">Repo</span>
+                  </button>
+                  <div class="action-metric citation-btn">
+                    <i data-lucide="quote" class="metric-icon"></i>
+                    <span class="count">24</span>
+                    <span class="label">Citations</span>
+                  </div>
+                </div>
+                <button class="bookmark-btn" aria-label="Bookmark paper" data-target="darwin-family">
+                  <i data-lucide="bookmark" class="bookmark-icon"></i>
+                </button>
+              </div>
+            </article>
+
+          </section>
+
+          <!-- Right Column: Widgets / Feeds from X & Reddit -->
+          <aside class="widgets-column">
+            
+            <!-- Trending on X -->
+            <div class="social-widget x-widget">
+              <div class="widget-header">
+                <span class="widget-title"><svg class="x-logo-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Trending on X</span>
+              </div>
+              <ul class="social-list">
+                <li>
+                  <a href="https://x.com/levelsio" target="_blank" class="handle">x.com/levelsio</a>
+                  <span class="stat">+2.1k <i data-lucide="star" class="widget-star"></i></span>
+                </li>
+                <li>
+                  <a href="https://x.com/EMostaque" target="_blank" class="handle">x.com/EMostaque</a>
+                  <span class="stat">+1.8k <i data-lucide="star" class="widget-star"></i></span>
+                </li>
+                <li>
+                  <a href="https://x.com/ai_for_success" target="_blank" class="handle">x.com/ai_for_success</a>
+                  <span class="stat">+1.6k <i data-lucide="star" class="widget-star"></i></span>
+                </li>
+                <li>
+                  <a href="https://x.com/deedyxiw" target="_blank" class="handle">x.com/deedyxiw</a>
+                  <span class="stat">+1.4k <i data-lucide="star" class="widget-star"></i></span>
+                </li>
+                <li>
+                  <a href="https://x.com/rowancheung" target="_blank" class="handle">x.com/rowancheung</a>
+                  <span class="stat">+1.2k <i data-lucide="star" class="widget-star"></i></span>
+                </li>
+              </ul>
+              <a href="#" class="widget-footer-link">View all trending posts <i data-lucide="arrow-right" class="arrow-icon"></i></a>
+            </div>
+
+            <!-- Trending on Reddit -->
+            <div class="social-widget reddit-widget">
+              <div class="widget-header">
+                <span class="widget-title">
+                  <svg class="reddit-logo-svg" width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.16 9.17a2 2 0 0 0-2.88 0 10 10 0 0 0-4.08-.85l.86-2.73 2.37.5a1.45 1.45 0 1 0 1.45-1.45 1.45 1.45 0 0 0-1.42 1.13l-2.61-.55a.36.36 0 0 0-.41.25l-.94 3A10 10 0 0 0 5.43 9.3a2 2 0 0 0-2.88 0 2 2 0 0 0 0 2.87 9.89 9.89 0 0 0 0 1A2 2 0 0 0 5.43 16a9.92 9.92 0 0 0 9.14 0 2 2 0 0 0 2.59-2.87 9.89 9.89 0 0 0 0-1 2 2 0 0 0 0-2.96zM5.9 11.64a.9.9 0 1 1 .9-.9.9.9 0 0 1-.9.9zm6.65 2.14a4 4 0 0 1-5.1 0 .36.36 0 1 1 .49-.52 3.29 3.29 0 0 0 4.12 0 .36.36 0 1 1 .49.52zm.65-2.14a.9.9 0 1 1 .9-.9.9.9 0 0 1-.9.9z"/>
+                  </svg> Trending on Reddit
+                </span>
+              </div>
+              <ul class="social-list">
+                <li>
+                  <a href="https://reddit.com/r/MachineLearning" target="_blank" class="handle">r/MachineLearning</a>
+                  <span class="stat">+2.1k <i data-lucide="star" class="widget-star"></i></span>
+                </li>
+                <li>
+                  <a href="https://reddit.com/r/LocalLLaMA" target="_blank" class="handle">r/LocalLLaMA</a>
+                  <span class="stat">+1.8k <i data-lucide="star" class="widget-star"></i></span>
+                </li>
+                <li>
+                  <a href="https://reddit.com/r/ArtificialIntelligence" target="_blank" class="handle">r/ArtificialIntelligence</a>
+                  <span class="stat">+1.6k <i data-lucide="star" class="widget-star"></i></span>
+                </li>
+                <li>
+                  <a href="https://reddit.com/r/DeepLearning" target="_blank" class="handle">r/DeepLearning</a>
+                  <span class="stat">+1.4k <i data-lucide="star" class="widget-star"></i></span>
+                </li>
+                <li>
+                  <a href="https://reddit.com/r/LLMDevs" target="_blank" class="handle">r/LLMDevs</a>
+                  <span class="stat">+1.2k <i data-lucide="star" class="widget-star"></i></span>
+                </li>
+              </ul>
+              <a href="#" class="widget-footer-link">View all trending discussions <i data-lucide="arrow-right" class="arrow-icon"></i></a>
+            </div>
+
+          </aside>
+
+        </div>
+
+      </main>
+
+      <!-- Global Footer -->
+      <footer class="app-footer">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <svg class="brand-logo" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="24" rx="6" fill="#FF4500"/>
+              <path d="M7 10L10 12L7 14M17 14L14 12L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 7V17" stroke="white" stroke-width="1.5" stroke-dasharray="2 2"/>
+            </svg>
+            <span class="footer-brand-name">Frontier Atlas</span>
+          </div>
+          <nav class="footer-links">
+            <a href="#">About</a>
+            <a href="#">API</a>
+            <a href="#">Pricing</a>
+            <a href="#">Blog</a>
+            <a href="#">Changelog</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-right">
+          <span class="copyright">© 2026 Frontier Atlas. All rights reserved.</span>
+          <div class="social-icons">
+            <a href="https://github.com" aria-label="GitHub"><i data-lucide="github"></i></a>
+            <a href="https://x.com" aria-label="X (Twitter)"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="mailto:info@frontier.ai" aria-label="Email"><i data-lucide="mail"></i></a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- Dialog for Submit Paper -->
+  <dialog id="submit-dialog" class="custom-dialog">
+    <div class="dialog-header">
+      <h3>Submit New Research Paper</h3>
+      <button class="close-dialog-btn" id="close-dialog-btn" aria-label="Close dialog">&times;</button>
+    </div>
+    <form id="submit-paper-form" method="dialog">
+      <div class="form-group">
+        <label for="paper-title-input">Paper Title *</label>
+        <input type="text" id="paper-title-input" required placeholder="e.g., Attention Is All You Need">
+      </div>
+      <div class="form-group">
+        <label for="paper-author-input">Authors *</label>
+        <input type="text" id="paper-author-input" required placeholder="e.g., Ashish Vaswani, Noam Shazeer, et al.">
+      </div>
+      <div class="form-group">
+        <label for="paper-abstract-input">Abstract / Description *</label>
+        <textarea id="paper-abstract-input" rows="4" required placeholder="Describe the main contributions and SOTA updates of the paper..."></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="paper-tags-input">Tags (comma separated)</label>
+          <input type="text" id="paper-tags-input" placeholder="e.g., Agents, LLM, Memory">
+        </div>
+        <div class="form-group">
+          <label for="paper-tech-input">Tech Stack (comma separated)</label>
+          <input type="text" id="paper-tech-input" placeholder="e.g., Transformer, PyTorch">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="paper-repo-input">GitHub Repo URL</label>
+          <input type="url" id="paper-repo-input" placeholder="https://github.com/...">
+        </div>
+        <div class="form-group">
+          <label for="paper-pdf-input">PDF URL</label>
+          <input type="url" id="paper-pdf-input" placeholder="https://arxiv.org/pdf/...">
+        </div>
+      </div>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-outline" id="cancel-submit-btn">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit Paper</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Lucide Icons Script -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- App JS Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
